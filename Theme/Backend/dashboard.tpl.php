@@ -30,8 +30,8 @@ echo $this->getData('nav')->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <a class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
-        <a class="button" href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete') ?></a>
+        <a tabindex="0" class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+        <a tabindex="0" class="button" href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete') ?></a>
     </div>
 </div>
 
@@ -73,8 +73,8 @@ echo $this->getData('nav')->render(); ?>
             <?php endif; ?>
         </table>
         <div class="portlet-foot">
-                <a class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
-                <a class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
+                <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
+                <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
             </div>
         </div>
     </div>
