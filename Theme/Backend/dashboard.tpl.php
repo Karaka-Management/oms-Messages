@@ -23,8 +23,8 @@ $quota = $mail->getQuota();
 */
 $messages = $this->getData('messages') ?? [];
 
-$previous = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \reset($messages)->getId() . '&ptype=-';
-$next     = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \end($messages)->getId() . '&ptype=+';
+$previous = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \reset($messages)->getId() . '&ptype=p';
+$next     = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \end($messages)->getId() . '&ptype=n';
 
 echo $this->getData('nav')->render(); ?>
 
