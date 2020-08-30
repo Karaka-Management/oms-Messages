@@ -31,22 +31,22 @@ echo $this->getData('nav')->render(); ?>
 <div class="row">
     <div class="col-xs-12">
         <a tabindex="0" class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
-        <a tabindex="0" class="button" href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete') ?></a>
+        <a tabindex="0" class="button" href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete'); ?></a>
     </div>
 </div>
 
 <div class="row">
     <div class="col-xs-12 col-md-8 col-lg-10">
         <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Messages') ?><i class="fa fa-download floatRight download btn"></i></div>
+            <div class="portlet-head"><?= $this->getHtml('Messages'); ?><i class="fa fa-download floatRight download btn"></i></div>
             <table id="profileList" class="default">
             <thead>
             <tr>
                 <td><span class="check"><input type="checkbox"></span>
-                <td><?= $this->getHtml('Tag') ?>
-                <td class="wf-100"><?= $this->getHtml('Subject') ?>
-                <td><?= $this->getHtml('From') ?>
-                <td><?= $this->getHtml('Date') ?>
+                <td><?= $this->getHtml('Tag'); ?>
+                <td class="wf-100"><?= $this->getHtml('Subject'); ?>
+                <td><?= $this->getHtml('From'); ?>
+                <td><?= $this->getHtml('Date'); ?>
             <tbody>
                 <?php $count = 0; foreach ($unseen as $key => $value) : ++$count;
                 $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>

@@ -22,20 +22,20 @@ echo $this->getData('nav')->render(); ?>
 <section class="box w-100">
     <ul class="btns floatLeft">
         <li><a href="<?= \phpOMS\Uri\UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
-        <li><a href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete') ?></a>
+        <li><a href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete'); ?></a>
     </ul>
 </section>
 
 <div class="box w-100">
     <table class="default">
-        <caption><?= $this->getHtml('Messages') ?><i class="fa fa-download floatRight download btn"></i></caption>
+        <caption><?= $this->getHtml('Messages'); ?><i class="fa fa-download floatRight download btn"></i></caption>
         <thead>
         <tr>
             <td><span class="check"><input type="checkbox"></span>
-            <td><?= $this->getHtml('Tag') ?>
-            <td class="wf-100"><?= $this->getHtml('Subject') ?>
-            <td><?= $this->getHtml('From') ?>
-            <td><?= $this->getHtml('Date') ?>
+            <td><?= $this->getHtml('Tag'); ?>
+            <td class="wf-100"><?= $this->getHtml('Subject'); ?>
+            <td><?= $this->getHtml('From'); ?>
+            <td><?= $this->getHtml('Date'); ?>
         <tfoot>
         <tr><td colspan="5"><?= $this->printHtml(\phpOMS\Utils\Converter\File::kilobyteSizeToString($quota['usage'])); ?> / <?= $this->printHtml(\phpOMS\Utils\Converter\File::kilobyteSizeToString($quota['limit'])); ?>
         <tbody>
