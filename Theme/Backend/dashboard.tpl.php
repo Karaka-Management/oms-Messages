@@ -49,7 +49,7 @@ echo $this->getData('nav')->render(); ?>
                 <td><?= $this->getHtml('Date'); ?>
             <tbody>
                 <?php $count = 0; foreach ($unseen as $key => $value) : ++$count;
-                $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
+                $url         = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
                 <tr>
                     <td><span class="check"><input type="checkbox"></span>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>

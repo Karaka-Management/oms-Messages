@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 $mail = new \phpOMS\Message\Mail\Imap();
 $mail->connect('{imap.gmail.com:993/imap/ssl}[Gmail]/Gesendet', 'dev.orange.management@gmail.com', 'DEV_PASSWORD');
-$sent = $mail->getInboxAll();
+$sent  = $mail->getInboxAll();
 $quota = $mail->getQuota();
 
 echo $this->getData('nav')->render(); ?>
@@ -40,7 +40,7 @@ echo $this->getData('nav')->render(); ?>
         <tr><td colspan="5"><?= $this->printHtml(\phpOMS\Utils\Converter\File::kilobyteSizeToString($quota['usage'])); ?> / <?= $this->printHtml(\phpOMS\Utils\Converter\File::kilobyteSizeToString($quota['limit'])); ?>
         <tbody>
         <?php $count = 0; foreach ($sent as $key => $value) : ++$count;
-        $url = \phpOMS\Uri\UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
+        $url         = \phpOMS\Uri\UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
         <tr>
             <td><span class="check"><input type="checkbox"></span>
             <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
