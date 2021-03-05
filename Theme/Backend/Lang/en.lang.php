@@ -4,6 +4,7 @@
  *
  * PHP Version 8.0
  *
+ * @package   Modules\Localization
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -17,7 +18,7 @@ return ['Messages' => [
     'BCC'           => 'BCC',
     'CC'            => 'CC',
     'Date'          => 'Date',
-    'Delete'        => '',
+    'Delete'        => 'Delete',
     'Draft'         => 'Draft',
     'From'          => 'From',
     'Inbox'         => 'Inbox',
@@ -28,8 +29,8 @@ return ['Messages' => [
     'New'           => 'New',
     'Outbox'        => 'Outbox',
     'Received'      => 'Received',
-    'Save'          => '',
-    'Select'        => '',
+    'Save'          => 'Save',
+    'Select'        => 'Select',
     'Sent'          => 'Sent',
     'Spam'          => 'Spam',
     'Statistics'    => 'Statistics',
