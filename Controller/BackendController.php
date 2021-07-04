@@ -44,7 +44,7 @@ final class BackendController extends Controller
     public function viewMessageInbox(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/Messages/Theme/Backend/dashboard');
+        $view->setTemplate('/Modules/Messages/Theme/Backend/mail-dashboard');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
 
         return $view;

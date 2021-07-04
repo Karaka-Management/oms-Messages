@@ -21,6 +21,7 @@ $unseen = $mail->getInboxUnseen();
 $seen = $mail->getInboxSeen();
 $quota = $mail->getQuota();
 */
+
 $messages = $this->getData('messages') ?? [];
 
 $previous = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \reset($messages)->getId() . '&ptype=p';
@@ -29,14 +30,7 @@ $next     = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}message
 echo $this->getData('nav')->render(); ?>
 
 <div class="row">
-    <div class="col-xs-12">
-        <a tabindex="0" class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
-        <a tabindex="0" class="button" href=""><i class="fa fa-trash"></i> <?= $this->getHtml('Delete'); ?></a>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12 col-md-8 col-lg-10">
+    <div class="col-xs-12 col-md-9">
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Messages'); ?><i class="fa fa-download floatRight download btn"></i></div>
             <table id="profileList" class="default">
@@ -48,26 +42,17 @@ echo $this->getData('nav')->render(); ?>
                 <td><?= $this->getHtml('From'); ?>
                 <td><?= $this->getHtml('Date'); ?>
             <tbody>
-                <?php $count = 0; foreach ($unseen as $key => $value) : ++$count;
-                $url         = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
+            <?php $count = 0;
+                foreach ($messages as $key => $value) : ++$count;
+                $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
                 <tr>
                     <td><span class="check"><input type="checkbox"></span>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml(\str_replace('_',' ', \mb_decode_mimeheader($value->subject))); ?></a>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml($value->from); ?></a>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml((new \DateTime($value->date))->format('Y-m-d H:i:s')); ?></a>
-                <?php endforeach; ?>
-
-                        <?php foreach ($seen as $key => $value) : ++$count;
-                        $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
-                <tr>
-                    <td><span class="check"><input type="checkbox"></span>
-                    <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
-                    <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml(\str_replace('_',' ', \mb_decode_mimeheader($value->subject))); ?></a>
-                    <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml($value->from); ?></a>
-                    <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml((new \DateTime($value->date))->format('Y-m-d H:i:s')); ?></a>
-                        <?php endforeach; ?>
-                <?php if ($count < 1) : ?>
+            <?php endforeach; ?>
+            <?php if ($count === 0) : ?>
             <tr>
                 <td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
             <?php endif; ?>
@@ -75,6 +60,33 @@ echo $this->getData('nav')->render(); ?>
         <div class="portlet-foot">
                 <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
                 <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-3">
+        <div class="box">
+            <a tabindex="0" class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+        </div>
+
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Channels'); ?></div>
+            <div class="portlet-body">
+                asdf
+            </div>
+        </div>
+
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Email'); ?></div>
+            <div class="portlet-body">
+                asdf
+            </div>
+        </div>
+
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Chat'); ?></div>
+            <div class="portlet-body">
+                asdf
             </div>
         </div>
     </div>
