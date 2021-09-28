@@ -23,7 +23,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageInbox',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -34,7 +34,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageOutbox',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -45,7 +45,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTrash',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -56,7 +56,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageSpam',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -67,7 +67,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageSettings',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -78,7 +78,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageCreate',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -89,7 +89,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageView',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
@@ -100,7 +100,7 @@ return [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageView',
             'verb'       => RouteVerb::GET,
             'permission' => [
-                'module' => BackendController::MODULE_NAME,
+                'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
                 'state'  => PermissionState::MESSAGE,
             ],
