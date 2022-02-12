@@ -13,11 +13,11 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Draft',
-    'Inbox'    => 'Inbox',
-    'Messages' => 'Messages',
-    'Outbox'   => 'Outbox',
-    'Settings' => 'Settings',
-    'Spam'     => 'Spam',
-    'Trash'    => 'Trash',
+    'Draft'    => '초안',
+    'Inbox'    => '받은 편지함',
+    'Messages' => '메시지',
+    'Outbox'   => '봉인함',
+    'Settings' => '설정',
+    'Spam'     => '스팸',
+    'Trash'    => '쓰레기',
 ]];

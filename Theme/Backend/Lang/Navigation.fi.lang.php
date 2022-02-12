@@ -13,11 +13,11 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Draft',
-    'Inbox'    => 'Inbox',
-    'Messages' => 'Messages',
-    'Outbox'   => 'Outbox',
-    'Settings' => 'Settings',
-    'Spam'     => 'Spam',
-    'Trash'    => 'Trash',
+    'Draft'    => 'Luonnos',
+    'Inbox'    => 'Postilaatikko',
+    'Messages' => 'Viestit',
+    'Outbox'   => 'Ulkona',
+    'Settings' => 'asetukset',
+    'Spam'     => 'Roskapostia',
+    'Trash'    => 'Roska',
 ]];
