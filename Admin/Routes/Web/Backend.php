@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 use Modules\Messages\Controller\BackendController;
-use Modules\Messages\Models\PermissionState;
+use Modules\Messages\Models\PermissionCategory;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
@@ -25,7 +25,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -36,7 +36,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -47,7 +47,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -58,7 +58,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -69,7 +69,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -80,7 +80,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -91,7 +91,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
@@ -102,7 +102,7 @@ return [
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::MESSAGE,
+                'state'  => PermissionCategory::MESSAGE,
             ],
         ],
     ],
