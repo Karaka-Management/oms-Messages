@@ -31,7 +31,7 @@ echo $this->getData('nav')->render(); ?>
         <caption><?= $this->getHtml('Messages'); ?><i class="fa fa-download floatRight download btn"></i></caption>
         <thead>
         <tr>
-            <td><span class="check"><input type="checkbox"></span>
+            <td><span class="check"><input type="checkbox" name=""></span>
             <td><?= $this->getHtml('Tag'); ?>
             <td class="wf-100"><?= $this->getHtml('Subject'); ?>
             <td><?= $this->getHtml('From'); ?>
@@ -42,7 +42,7 @@ echo $this->getData('nav')->render(); ?>
         <?php $count = 0; foreach ($sent as $key => $value) : ++$count;
         $url         = \phpOMS\Uri\UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
         <tr>
-            <td><span class="check"><input type="checkbox"></span>
+            <td><span class="check"><input type="checkbox" name=""></span>
             <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
             <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml(\str_replace('_',' ', \mb_decode_mimeheader($value->subject))); ?></a>
             <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml($value->from); ?></a>

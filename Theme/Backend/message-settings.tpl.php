@@ -58,7 +58,7 @@ echo $this->getData('nav')->render(); ?>
                             <option value="<?= $this->printHtml($box); ?>"><?= $this->printHtml($box); ?>
                                 <?php endforeach; ?>
                         </select>
-                <tr><td><input type="submit" value="<?= $this->getHtml('Save'); ?>">
+                <tr><td><input type="submit" value="<?= $this->getHtml('Save'); ?>" name="save-message">
             </table>
         </form>
     </div>

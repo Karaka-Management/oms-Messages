@@ -36,7 +36,7 @@ echo $this->getData('nav')->render(); ?>
             <table id="profileList" class="default">
             <thead>
             <tr>
-                <td><span class="check"><input type="checkbox"></span>
+                <td><span class="check"><input type="checkbox" name="profile-list"></span>
                 <td><?= $this->getHtml('Tag'); ?>
                 <td class="wf-100"><?= $this->getHtml('Subject'); ?>
                 <td><?= $this->getHtml('From'); ?>
@@ -46,7 +46,7 @@ echo $this->getData('nav')->render(); ?>
                 foreach ($messages as $key => $value) : ++$count;
                 $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
                 <tr>
-                    <td><span class="check"><input type="checkbox"></span>
+                    <td><span class="check"><input type="checkbox" name=""></span>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml(\str_replace('_',' ', \mb_decode_mimeheader($value->subject))); ?></a>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>><?= $this->printHtml($value->from); ?></a>
