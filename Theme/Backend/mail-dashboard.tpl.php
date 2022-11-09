@@ -24,8 +24,8 @@ $quota = $mail->getQuota();
 
 $messages = $this->getData('messages') ?? [];
 
-$previous = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \reset($messages)->getId() . '&ptype=p';
-$next     = empty($messages) ? '{/prefix}messages/dashboard' : '{/prefix}messages/dashboard?{?}&id=' . \end($messages)->getId() . '&ptype=n';
+$previous = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \reset($messages)->getId() . '&ptype=p';
+$next     = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \end($messages)->getId() . '&ptype=n';
 
 echo $this->getData('nav')->render(); ?>
 
@@ -44,7 +44,7 @@ echo $this->getData('nav')->render(); ?>
             <tbody>
             <?php $count = 0;
                 foreach ($messages as $key => $value) : ++$count;
-                $url = UriFactory::build('{/prefix}messages/mail/single?{?}&id=' . $value->uid); ?>
+                $url = UriFactory::build('messages/mail/single?{?}&id=' . $value->uid); ?>
                 <tr>
                     <td><span class="check"><input type="checkbox" name=""></span>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>
@@ -66,7 +66,7 @@ echo $this->getData('nav')->render(); ?>
 
     <div class="col-xs-12 col-md-3">
         <div class="box">
-            <a tabindex="0" class="button" href="<?= UriFactory::build('{/prefix}messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+            <a tabindex="0" class="button" href="<?= UriFactory::build('messages/mail/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
         </div>
 
         <div class="portlet">
