@@ -1,0 +1,121 @@
+{
+    "triggers": [
+        "PRE:Module:Messages:message-create",
+        "POST:Module:Messages:message-create",
+        "PRE:Module:Messages:message-update",
+        "POST:Module:Messages:message-update",
+        "PRE:Module:Messages:message-delete",
+        "POST:Module:Messages:message-delete"
+    ],
+    "actions": {
+        "1001200001": {
+            "name": "Send Email",
+            "description": {
+                "en": "Send Email",
+                "de": "Versende Email"
+            },
+            "function_type": "API",
+            "function": "apiSendEmail",
+            "inputs": [
+                "from",
+                "to",
+                "bcc",
+                "message",
+                "attachments",
+                "{*}"
+            ],
+            "outputs": [
+                "message",
+                "message.getTo()",
+                "message.getFrom()",
+                "message.getBcc()",
+                "message.message",
+                "message.getAttachments()",
+                "message.getStatus()",
+                "{*}"
+            ],
+            "settings": {
+                "from": {
+                    "type": "input",
+                    "subtype": "text",
+                    "default": null,
+                    "pattern": null,
+                    "examples": [],
+                    "required": true,
+                    "title": {
+                        "en": "From",
+                        "de": "Absender"
+                    },
+                    "description": {
+                        "en": "",
+                        "de": ""
+                    }
+                },
+                "to": {
+                    "type": "input",
+                    "subtype": "text",
+                    "default": null,
+                    "pattern": null,
+                    "examples": [],
+                    "required": true,
+                    "title": {
+                        "en": "Receiver",
+                        "de": "Empfänger"
+                    },
+                    "description": {
+                        "en": "",
+                        "de": ""
+                    }
+                },
+                "bcc": {
+                    "type": "input",
+                    "subtype": "text",
+                    "default": null,
+                    "pattern": null,
+                    "examples": [],
+                    "required": true,
+                    "title": {
+                        "en": "BCC",
+                        "de": "BCC"
+                    },
+                    "description": {
+                        "en": "",
+                        "de": ""
+                    }
+                },
+                "message": {
+                    "type": "textarea",
+                    "subtype": null,
+                    "default": null,
+                    "pattern": null,
+                    "examples": [],
+                    "required": true,
+                    "title": {
+                        "en": "Message",
+                        "de": "Nachricht"
+                    },
+                    "description": {
+                        "en": "",
+                        "de": ""
+                    }
+                },
+                "attachments": {
+                    "type": "input",
+                    "subtype": "text",
+                    "default": null,
+                    "pattern": "/(^\\*$)|(^(\\d+)(,\\s*\\d+)*$)/",
+                    "examples": [],
+                    "required": false,
+                    "title": {
+                        "en": "Attachments",
+                        "de": "Anhänge"
+                    },
+                    "description": {
+                        "en": "",
+                        "de": ""
+                    }
+                }
+            }
+        }
+    }
+}
