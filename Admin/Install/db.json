@@ -1,0 +1,252 @@
+{
+    "messages_mail": {
+        "name": "messages_mail",
+        "fields": {
+            "messages_mail_id": {
+                "name": "messages_mail_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_mail_msgid": {
+                "name": "messages_mail_msgid",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "messages_mail_status": {
+                "name": "messages_mail_status",
+                "type": "TINYINT",
+                "null": false
+            },
+            "messages_mail_to": {
+                "name": "messages_mail_to",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_from": {
+                "name": "messages_mail_from",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "messages_mail_from_account": {
+                "name": "messages_mail_from_account",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            },
+            "messages_mail_cc": {
+                "name": "messages_mail_cc",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_bcc": {
+                "name": "messages_mail_bcc",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_replyto": {
+                "name": "messages_mail_replyto",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_confimation": {
+                "name": "messages_mail_confimation",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "messages_mail_subject": {
+                "name": "messages_mail_subject",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_body": {
+                "name": "messages_mail_body",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_bodyalt": {
+                "name": "messages_mail_bodyalt",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_bodymime": {
+                "name": "messages_mail_bodymime",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_ical": {
+                "name": "messages_mail_ical",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_created_at": {
+                "name": "messages_mail_created_at",
+                "type": "DATETIME",
+                "null": false
+            },
+            "messages_mail_sent": {
+                "name": "messages_mail_sent",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            },
+            "messages_mail_received": {
+                "name": "messages_mail_received",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            },
+            "messages_mail_priority": {
+                "name": "messages_mail_priority",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "messages_mail_encoding": {
+                "name": "messages_mail_encoding",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "messages_mail_contenttype": {
+                "name": "messages_mail_contenttype",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "messages_mail_charset": {
+                "name": "messages_mail_charset",
+                "type": "VARCHAR(255)",
+                "null": false
+            }
+        }
+    },
+    "messages_mail_media": {
+        "name": "messages_mail_media",
+        "fields": {
+            "messages_mail_media_id": {
+                "name": "messages_mail_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_mail_media_src": {
+                "name": "messages_mail_media_src",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "messages_mail",
+                "foreignKey": "messages_mail_id"
+            },
+            "messages_mail_media_dst": {
+                "name": "messages_mail_media_dst",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
+    "messages_channel": {
+        "description": "Only for internal purposes, can be a server or group chat or 1v1 chat",
+        "name": "messages_channel",
+        "fields": {
+            "messages_channel_id": {
+                "name": "messages_channel_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_channel_status": {
+                "name": "messages_channel_status",
+                "type": "TINYINT",
+                "null": false
+            },
+            "messages_mail_created_at": {
+                "name": "messages_mail_created_at",
+                "type": "DATETIME",
+                "null": false
+            },
+            "messages_mail_created_by": {
+                "name": "messages_mail_created_by",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            }
+        }
+    },
+    "messages_channel_rel": {
+        "name": "messages_channel_rel",
+        "fields": {
+            "messages_channel_rel_id": {
+                "name": "messages_channel_rel_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_channel_rel_channel": {
+                "name": "messages_channel_rel_channel",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "messages_channel",
+                "foreignKey": "messages_channel_id"
+            },
+            "messages_channel_rel_account": {
+                "name": "messages_channel_rel_account",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            }
+        }
+    },
+    "messages_msg": {
+        "name": "messages_msg",
+        "fields": {
+            "messages_msg_id": {
+                "name": "messages_msg_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_msg_status": {
+                "name": "messages_msg_status",
+                "type": "TINYINT",
+                "null": false
+            },
+            "messages_msg_body": {
+                "name": "messages_msg_body",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_msg_bodyalt": {
+                "name": "messages_msg_bodyalt",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_created_at": {
+                "name": "messages_mail_created_at",
+                "type": "DATETIME",
+                "null": false
+            },
+            "messages_mail_created_by": {
+                "name": "messages_mail_created_by",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            },
+            "messages_mail_channel": {
+                "name": "messages_mail_channel",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "messages_channel",
+                "foreignKey": "messages_channel_id"
+            }
+        }
+    }
+}
