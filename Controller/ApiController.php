@@ -23,7 +23,6 @@ use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
 use phpOMS\Model\Message\FormValidation;
 
-
 /**
  * Media class.
  *
@@ -75,8 +74,8 @@ final class ApiController extends Controller
     private function validateEmailCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['subject'] = empty($request->getData('subject')))
-            || ($val['body'] = empty($request->getData('body')))
+        if (($val['subject'] = !$request->hasData('subject'))
+            || ($val['body'] = !$request->hasData('body'))
         ) {
             return $val;
         }

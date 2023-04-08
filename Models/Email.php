@@ -44,9 +44,14 @@ final class Email extends MailEmail implements \JsonSerializable
 
     private array $media = [];
 
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
     public function __construct()
     {
-        $this->account = new NullAccount();
+        $this->account   = new NullAccount();
         $this->createdAt = new \DateTimeImmutable('now');
     }
 
