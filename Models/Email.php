@@ -26,7 +26,7 @@ use phpOMS\Message\Mail\Email as MailEmail;
  * @link    https://jingga.app
  * @since   1.0.0
  */
-final class Email extends MailEmail implements \JsonSerializable
+class Email extends MailEmail implements \JsonSerializable
 {
     /**
      * Mail id.
