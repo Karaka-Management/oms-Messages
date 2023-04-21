@@ -14,8 +14,9 @@
                 "en": "Send Email",
                 "de": "Versende Email"
             },
-            "function_type": "API",
+            "function_type": "Api",
             "function": "apiSendEmail",
+            "module": "Messages",
             "inputs": [
                 "from",
                 "to",
