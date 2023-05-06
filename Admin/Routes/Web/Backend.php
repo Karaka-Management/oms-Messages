@@ -73,6 +73,17 @@ return [
             ],
         ],
     ],
+    '^.*/messages/templates.*$' => [
+        [
+            'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTemplates',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionCategory::MESSAGE,
+            ],
+        ],
+    ],
     '^.*/messages/mail/create.*$' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageCreate',

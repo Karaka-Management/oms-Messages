@@ -46,6 +46,8 @@ class Email extends MailEmail implements \JsonSerializable
 
     public array $l11n = [];
 
+    public bool $isTemplate = false;
+
     /**
      * Constructor.
      *
@@ -72,7 +74,7 @@ class Email extends MailEmail implements \JsonSerializable
     public function getL11nByLanguage(string $language) : EmailL11n
     {
         foreach ($this->l11n as $l11n) {
-            if ($l11n->language->getLanguage() === $language) {
+            if ($l11n->language === $language) {
                 return $l11n;
             }
         }

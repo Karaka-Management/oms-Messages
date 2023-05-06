@@ -60,6 +60,7 @@ final class EmailMapper extends DataMapperFactory
         'messages_mail_encoding'     => ['name' => 'messages_mail_encoding',     'type' => 'string',            'internal' => 'encoding'],
         'messages_mail_contenttype'  => ['name' => 'messages_mail_contenttype',  'type' => 'string',            'internal' => 'contentType'],
         'messages_mail_charset'      => ['name' => 'messages_mail_charset',      'type' => 'string',            'internal' => 'charset'],
+        'messages_mail_template'      => ['name' => 'messages_mail_template',      'type' => 'bool',            'internal' => 'isTemplate'],
     ];
 
     /**

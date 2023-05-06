@@ -133,6 +133,7 @@ final class Installer extends InstallerAbstract
         $request->setData('body', $data['body'] ?? '');
         $request->setData('bodyalt', $data['bodyalt'] ?? '');
         $request->setData('send', $data['send'] ?? false);
+        $request->setData('template', true);
 
         $module->apiEmailCreate($request, $response);
 

@@ -20,4 +20,5 @@ return ['Navigation' => [
     'Settings' => 'Settings',
     'Spam'     => 'Spam',
     'Trash'    => 'Trash',
+    'Templates'    => 'Templates',
 ]];

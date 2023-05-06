@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Modules\Messages\Controller;
 
+use Modules\Messages\Models\EmailL11nMapper;
+use Modules\Messages\Models\EmailMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
@@ -47,6 +49,36 @@ final class BackendController extends Controller
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-dashboard');
         $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behaviour.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewMessageTemplates(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Messages/Theme/Backend/mail-templates');
+        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+
+        $templates = EmailMapper::getAll()
+            ->with('l11n')
+            ->where('isTemplate', true)
+            ->where('account', $request->header->account)
+            ->where('l11n/language', $response->getLanguage())
+            ->execute();
+
+        $view->setData('templates', $templates);
 
         return $view;
     }

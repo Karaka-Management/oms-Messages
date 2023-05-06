@@ -118,6 +118,11 @@
                 "name": "messages_mail_charset",
                 "type": "VARCHAR(255)",
                 "null": false
+            },
+            "messages_mail_template": {
+                "name": "messages_mail_template",
+                "type": "TINYINT(1)",
+                "null": false
             }
         }
     },
