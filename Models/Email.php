@@ -34,7 +34,7 @@ class Email extends MailEmail implements \JsonSerializable
      * @var int
      * @since 1.0.0
      */
-    protected int $id = 0;
+    public int $id = 0;
 
     public Account $account;
 
@@ -43,6 +43,8 @@ class Email extends MailEmail implements \JsonSerializable
     public int $status = 0;
 
     private array $media = [];
+
+    public array $l11n = [];
 
     /**
      * Constructor.
@@ -65,6 +67,17 @@ class Email extends MailEmail implements \JsonSerializable
     public function getId() : int
     {
         return $this->id;
+    }
+
+    public function getL11nByLanguage(string $language) : EmailL11n
+    {
+        foreach ($this->l11n as $l11n) {
+            if ($l11n->language->getLanguage() === $language) {
+                return $l11n;
+            }
+        }
+
+        return new NullEmailL11n();
     }
 
     /**

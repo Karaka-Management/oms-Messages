@@ -75,6 +75,12 @@ final class EmailMapper extends DataMapperFactory
             'external' => 'messages_mail_media_dst',
             'self'     => 'messages_mail_media_src',
         ],
+        'l11n'        => [
+            'mapper'   => EmailL11nMapper::class,
+            'table'    => 'messages_mail_l11n',
+            'self'     => 'messages_mail_l11n_message',
+            'external' => null,
+        ],
     ];
 
     /**

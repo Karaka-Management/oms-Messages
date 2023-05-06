@@ -147,6 +147,47 @@
             }
         }
     },
+    "messages_mail_l11n": {
+        "name": "messages_mail_l11n",
+        "fields": {
+            "messages_mail_l11n_id": {
+                "name": "messages_mail_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "messages_mail_l11n_subject": {
+                "name": "messages_mail_l11n_subject",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_l11n_body": {
+                "name": "messages_mail_l11n_body",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_l11n_bodyalt": {
+                "name": "messages_mail_l11n_bodyalt",
+                "type": "TEXT",
+                "null": false
+            },
+            "messages_mail_l11n_message": {
+                "name": "messages_mail_l11n_message",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "messages_mail",
+                "foreignKey": "messages_mail_id"
+            },
+            "messages_mail_l11n_lang": {
+                "name": "messages_mail_l11n_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    },
     "messages_channel": {
         "description": "Only for internal purposes, can be a server or group chat or 1v1 chat",
         "name": "messages_channel",

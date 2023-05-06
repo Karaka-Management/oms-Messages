@@ -16,6 +16,8 @@ namespace Modules\Messages\Controller;
 
 use Modules\Admin\Models\NullAccount;
 use Modules\Messages\Models\Email;
+use Modules\Messages\Models\EmailL11n;
+use Modules\Messages\Models\EmailL11nMapper;
 use Modules\Messages\Models\EmailMapper;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\NotificationLevel;
@@ -74,8 +76,7 @@ final class ApiController extends Controller
     private function validateEmailCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['subject'] = !$request->hasData('subject'))
-            || ($val['body'] = !$request->hasData('body'))
+        if (false
         ) {
             return $val;
         }
@@ -128,17 +129,88 @@ final class ApiController extends Controller
         $email->account = new NullAccount($request->getDataInt('account') ?? $request->header->account);
 
         $email->setHtml($request->getDataBool('ishtml') ?? false);
-
         $email->subject = $request->getDataString('subject') ?? '';
 
-        if ($request->getDataBool('ishtml') ?? false) {
-            $email->msgHTML($request->getDataString('body') ?? '');
-        } else {
-            $email->body = $request->getDataString('body') ?? '';
+        if ($request->hasData('body')) {
+            if ($request->getDataBool('ishtml') ?? false) {
+                $email->msgHTML($request->getDataString('body') ?? '');
+            } else {
+                $email->body = $request->getDataString('body') ?? '';
+            }
         }
 
         $email->bodyAlt = $request->getDataString('bodyalt') ?? '';
 
         return $email;
+    }
+
+    /**
+     * Api method to create item l11n
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiEmailL11nCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
+    {
+        if (!empty($val = $this->validateEmailL11nCreate($request))) {
+            $response->set('email_l11n_create', new FormValidation($val));
+            $response->header->status = RequestStatusCode::R_400;
+
+            return;
+        }
+
+        $emailL11n = $this->createEmailL11nFromRequest($request);
+        $this->createModel($request->header->account, $emailL11n, EmailL11nMapper::class, 'message_l11n', $request->getOrigin());
+        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Localization', 'Localization successfully created', $emailL11n);
+    }
+
+    /**
+     * Method to create item l11n from request.
+     *
+     * @param RequestAbstract $request Request
+     *
+     * @return EmailL11n
+     *
+     * @since 1.0.0
+     */
+    private function createEmailL11nFromRequest(RequestAbstract $request) : EmailL11n
+    {
+        $itemL11n       = new EmailL11n();
+        $itemL11n->email = $request->getDataInt('email') ?? 0;
+        $itemL11n->setLanguage(
+            $request->getDataString('language') ?? $request->getLanguage()
+        );
+        $itemL11n->subject = $request->getDataString('subject') ?? '';
+        $itemL11n->body = $request->getDataString('body') ?? '';
+        $itemL11n->bodyAlt = $request->getDataString('bodyalt') ?? '';
+
+        return $itemL11n;
+    }
+
+    /**
+     * Validate item l11n create request
+     *
+     * @param RequestAbstract $request Request
+     *
+     * @return array<string, bool>
+     *
+     * @since 1.0.0
+     */
+    private function validateEmailL11nCreate(RequestAbstract $request) : array
+    {
+        $val = [];
+        if (($val['email'] = !$request->hasData('email'))
+        ) {
+            return $val;
+        }
+
+        return [];
     }
 }

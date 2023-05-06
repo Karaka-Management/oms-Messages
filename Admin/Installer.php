@@ -18,7 +18,6 @@ use phpOMS\Application\ApplicationAbstract;
 use phpOMS\Message\Http\HttpRequest;
 use phpOMS\Message\Http\HttpResponse;
 use phpOMS\Module\InstallerAbstract;
-use phpOMS\Module\ModuleInfo;
 use phpOMS\System\File\PathException;
 use phpOMS\Uri\HttpUri;
 
@@ -58,7 +57,7 @@ final class Installer extends InstallerAbstract
     public static function installExternal(ApplicationAbstract $app, array $data) : array
     {
         try {
-            $app->dbPool->get()->con->query('select 1 from `editor_doc`');
+            $app->dbPool->get()->con->query('select 1 from `messages_mail`');
         } catch (\Exception $e) {
             return []; // @codeCoverageIgnore
         }
@@ -140,6 +139,22 @@ final class Installer extends InstallerAbstract
         $responseData = $response->get('');
         if (!\is_array($responseData)) {
             return [];
+        }
+
+        $emailId = $responseData['response']->id;
+
+        foreach ($data['l11n'] as $language => $l11n) {
+            $l11nResponse = new HttpResponse();
+            $l11nRequest  = new HttpRequest(new HttpUri(''));
+
+            $l11nRequest->header->account = 1;
+            $l11nRequest->setData('email', $emailId);
+            $l11nRequest->setData('language', $language);
+            $l11nRequest->setData('subject', $l11n['subject'] ?? '');
+            $l11nRequest->setData('body', $l11n['body'] ?? '');
+            $l11nRequest->setData('bodyalt', $l11n['bodyalt'] ?? '');
+
+            $module->apiEmailL11nCreate($l11nRequest, $l11nResponse);
         }
 
         return !\is_array($responseData['response'])
