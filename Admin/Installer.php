@@ -58,7 +58,7 @@ final class Installer extends InstallerAbstract
     {
         try {
             $app->dbPool->get()->con->query('select 1 from `messages_mail`');
-        } catch (\Exception $e) {
+        } catch (\Exception $_) {
             return []; // @codeCoverageIgnore
         }
 
@@ -158,8 +158,8 @@ final class Installer extends InstallerAbstract
             $module->apiEmailL11nCreate($l11nRequest, $l11nResponse);
         }
 
-        return !\is_array($responseData['response'])
-            ? $responseData['response']->toArray()
-            : $responseData['response'];
+        return \is_array($responseData['response'])
+            ? $responseData['response']
+            : $responseData['response']->toArray();
     }
 }
