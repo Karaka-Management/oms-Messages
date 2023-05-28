@@ -39,7 +39,7 @@ final class Installer extends InstallerAbstract
      */
     public const PATH = __DIR__;
 
-     /**
+    /**
      * Install data from providing modules.
      *
      * The data can be either directories which should be created or files which should be "uploaded"

@@ -35,7 +35,6 @@ use phpOMS\Model\Message\FormValidation;
  */
 final class ApiController extends Controller
 {
-
     /**
      * Api method to create tag
      *
@@ -184,13 +183,13 @@ final class ApiController extends Controller
      */
     private function createEmailL11nFromRequest(RequestAbstract $request) : EmailL11n
     {
-        $itemL11n       = new EmailL11n();
+        $itemL11n        = new EmailL11n();
         $itemL11n->email = $request->getDataInt('email') ?? 0;
         $itemL11n->setLanguage(
             $request->getDataString('language') ?? $request->getLanguage()
         );
         $itemL11n->subject = $request->getDataString('subject') ?? '';
-        $itemL11n->body = $request->getDataString('body') ?? '';
+        $itemL11n->body    = $request->getDataString('body') ?? '';
         $itemL11n->bodyAlt = $request->getDataString('bodyalt') ?? '';
 
         return $itemL11n;

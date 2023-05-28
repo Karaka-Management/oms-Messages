@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\Messages\Controller;
 
-use Modules\Messages\Models\EmailL11nMapper;
 use Modules\Messages\Models\EmailMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
