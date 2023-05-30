@@ -186,7 +186,7 @@ final class ApiController extends Controller
         $itemL11n        = new EmailL11n();
         $itemL11n->email = $request->getDataInt('email') ?? 0;
         $itemL11n->setLanguage(
-            $request->getDataString('language') ?? $request->getLanguage()
+            $request->getDataString('language') ?? $request->header->l11n->language
         );
         $itemL11n->subject = $request->getDataString('subject') ?? '';
         $itemL11n->body    = $request->getDataString('body') ?? '';
