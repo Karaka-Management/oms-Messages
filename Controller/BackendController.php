@@ -47,7 +47,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-dashboard');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }
@@ -68,7 +68,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-templates');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         $templates = EmailMapper::getAll()
             ->with('l11n')
@@ -77,7 +77,7 @@ final class BackendController extends Controller
             ->where('l11n/language', $response->header->l11n->language)
             ->execute();
 
-        $view->setData('templates', $templates);
+        $view->data['templates'] = $templates;
 
         return $view;
     }
@@ -98,7 +98,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-out-view');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }
@@ -119,7 +119,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-trash-view');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }
@@ -140,7 +140,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-spam-view');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }
@@ -161,8 +161,8 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-view');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
-        $view->addData('id', (int) $request->getData('id'));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
+        $view->data['id'] = (int) $request->getData('id');
 
         return $view;
     }
@@ -183,7 +183,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }
@@ -204,7 +204,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/message-settings');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
 
         return $view;
     }

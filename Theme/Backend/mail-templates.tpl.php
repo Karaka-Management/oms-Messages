@@ -22,12 +22,12 @@ $seen = $mail->getInboxSeen();
 $quota = $mail->getQuota();
 */
 
-$messages = $this->getData('templates') ?? [];
+$messages = $this->data['templates'] ?? [];
 
 $previous = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \reset($messages)->id . '&ptype=p';
 $next     = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \end($messages)->id . '&ptype=n';
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12 col-md-9">
