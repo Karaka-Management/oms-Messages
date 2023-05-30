@@ -17,7 +17,7 @@ $mail->connect('{imap.gmail.com:993/imap/ssl}[Gmail]/Gesendet', 'dev.orange.mana
 $sent  = $mail->getInboxAll();
 $quota = $mail->getQuota();
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <section class="box w-100">
     <ul class="btns floatLeft">

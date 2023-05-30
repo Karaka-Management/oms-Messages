@@ -51,7 +51,7 @@ final class ApiController extends Controller
     public function apiEmailCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmailCreate($request))) {
-            $response->set('email_create', new FormValidation($val));
+            $response->data['email_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -161,7 +161,7 @@ final class ApiController extends Controller
     public function apiEmailL11nCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmailL11nCreate($request))) {
-            $response->set('email_l11n_create', new FormValidation($val));
+            $response->data['email_l11n_create'] = new FormValidation($val);
             $response->header->status = RequestStatusCode::R_400;
 
             return;
@@ -186,7 +186,7 @@ final class ApiController extends Controller
         $itemL11n        = new EmailL11n();
         $itemL11n->email = $request->getDataInt('email') ?? 0;
         $itemL11n->setLanguage(
-            $request->getDataString('language') ?? $request->getLanguage()
+            $request->getDataString('language') ?? $request->header->l11n->language
         );
         $itemL11n->subject = $request->getDataString('subject') ?? '';
         $itemL11n->body    = $request->getDataString('body') ?? '';

@@ -22,12 +22,12 @@ $seen = $mail->getInboxSeen();
 $quota = $mail->getQuota();
 */
 
-$messages = $this->getData('templates') ?? [];
+$messages = $this->data['templates'] ?? [];
 
 $previous = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \reset($messages)->id . '&ptype=p';
 $next     = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id=' . \end($messages)->id . '&ptype=n';
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12 col-md-9">
@@ -45,7 +45,7 @@ echo $this->getData('nav')->render(); ?>
                 $url = UriFactory::build('{/base}/messages/template/single?{?}&id=' . $value->id); ?>
                 <tr>
                     <td><span class="check"><input type="checkbox" name=""></span>
-                    <td><a href="<?= $url; ?>"><?= $this->printHtml(empty($value->subject) ? $value->getL11nByLanguage($this->response->getLanguage())->subject : $value->subject); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml(empty($value->subject) ? $value->getL11nByLanguage($this->response->header->l11n->language)->subject : $value->subject); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->createdAt->format('Y-m-d')); ?></a>
             <?php endforeach; ?>
             <?php if ($count === 0) : ?>
