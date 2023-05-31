@@ -162,7 +162,7 @@ final class BackendController extends Controller
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Messages/Theme/Backend/mail-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
-        $view->data['id'] = (int) $request->getData('id');
+        $view->data['id']  = (int) $request->getData('id');
 
         return $view;
     }

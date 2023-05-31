@@ -74,7 +74,6 @@ class EmailL11n implements \JsonSerializable
      */
     public string $bodyAlt = '';
 
-
     /**
      * Get language
      *

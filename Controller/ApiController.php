@@ -52,7 +52,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmailCreate($request))) {
             $response->data['email_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status       = RequestStatusCode::R_400;
 
             return;
         }
@@ -162,7 +162,7 @@ final class ApiController extends Controller
     {
         if (!empty($val = $this->validateEmailL11nCreate($request))) {
             $response->data['email_l11n_create'] = new FormValidation($val);
-            $response->header->status = RequestStatusCode::R_400;
+            $response->header->status            = RequestStatusCode::R_400;
 
             return;
         }
