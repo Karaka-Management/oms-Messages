@@ -59,6 +59,15 @@ class Email extends MailEmail implements \JsonSerializable
         $this->createdAt = new \DateTimeImmutable('now');
     }
 
+    /**
+     * Get localization by language
+     *
+     * @param string $language Language code
+     *
+     * @return EmailL11n
+     *
+     * @since 1.0.0
+     */
     public function getL11nByLanguage(string $language) : EmailL11n
     {
         foreach ($this->l11n as $l11n) {

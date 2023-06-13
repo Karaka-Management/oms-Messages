@@ -96,7 +96,7 @@ final class ApiController extends Controller
     {
         $email = new Email();
 
-        $email->isTemplate = $request->getData('template') ?? false;
+        $email->isTemplate = $request->getDataBool('template') ?? false;
 
         if ($request->hasData('from')) {
             $from = $request->getDataJson('from');
