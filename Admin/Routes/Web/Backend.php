@@ -73,9 +73,20 @@ return [
             ],
         ],
     ],
-    '^.*/messages/templates.*$' => [
+    '^.*/messages/template/list.*$' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTemplates',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionCategory::MESSAGE,
+            ],
+        ],
+    ],
+    '^.*/messages/template/single.*$' => [
+        [
+            'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTemplate',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::NAME,

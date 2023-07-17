@@ -43,7 +43,7 @@ echo $this->data['nav']->render(); ?>
             <?php $count = 0;
                 foreach ($messages as $key => $value) : ++$count;
                 $url = UriFactory::build('{/base}/messages/template/single?{?}&id=' . $value->id); ?>
-                <tr>
+                <tr data-href="<?= $url ?>">
                     <td><span class="check"><input type="checkbox" name=""></span>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml(empty($value->subject) ? $value->getL11nByLanguage($this->response->header->l11n->language)->subject : $value->subject); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->createdAt->format('Y-m-d')); ?></a>

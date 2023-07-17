@@ -28,6 +28,7 @@ return ['Messages' => [
     'Interval'      => 'Interval',
     'Mailboxes'     => 'Mailboxes',
     'Messages'      => 'Messages',
+    'Templates'         => 'Templates',
     'Month'         => 'Month',
     'New'           => 'New',
     'Outbox'        => 'Outbox',

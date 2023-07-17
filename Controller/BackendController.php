@@ -94,6 +94,36 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
+    public function viewMessageTemplate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Messages/Theme/Backend/mail-template');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1001201001, $request, $response);
+
+        $template = EmailMapper::get()
+            ->with('l11n')
+            ->where('isTemplate', true)
+            ->where('account', $request->header->account)
+            ->where('id', $request->getDataInt('id'))
+            ->execute();
+
+        $view->data['template'] = $template;
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behaviour.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param mixed            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
     public function viewMessageOutbox(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
