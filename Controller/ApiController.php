@@ -20,10 +20,8 @@ use Modules\Messages\Models\EmailL11n;
 use Modules\Messages\Models\EmailL11nMapper;
 use Modules\Messages\Models\EmailMapper;
 use phpOMS\Message\Http\RequestStatusCode;
-use phpOMS\Message\NotificationLevel;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
-use phpOMS\Model\Message\FormValidation;
 
 /**
  * Media class.
@@ -51,16 +49,15 @@ final class ApiController extends Controller
     public function apiEmailCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmailCreate($request))) {
-            $response->data['email_create'] = new FormValidation($val);
-            $response->header->status       = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $email = $this->createEmailFromRequest($request);
         $this->createModel($request->header->account, $email, EmailMapper::class, 'email', $request->getOrigin());
-
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Email', 'Email successfully created', $email);
+        $this->createStandardCreateResponse($request, $response, $email);
     }
 
     /**
@@ -161,15 +158,15 @@ final class ApiController extends Controller
     public function apiEmailL11nCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
     {
         if (!empty($val = $this->validateEmailL11nCreate($request))) {
-            $response->data['email_l11n_create'] = new FormValidation($val);
-            $response->header->status            = RequestStatusCode::R_400;
+            $response->header->status = RequestStatusCode::R_400;
+            $this->createInvalidCreateResponse($request, $response, $val);
 
             return;
         }
 
         $emailL11n = $this->createEmailL11nFromRequest($request);
         $this->createModel($request->header->account, $emailL11n, EmailL11nMapper::class, 'message_l11n', $request->getOrigin());
-        $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Localization', 'Localization successfully created', $emailL11n);
+        $this->createStandardCreateResponse($request, $response, $emailL11n);
     }
 
     /**
