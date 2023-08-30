@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 use phpOMS\Localization\ISO639Enum;
-use phpOMS\Uri\UriFactory;
 use phpOMS\Utils\Formatter\HtmlFormatter;
 
 $mail = $this->data['template'];
