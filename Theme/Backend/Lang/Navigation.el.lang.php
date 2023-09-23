@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Προσχέδιο',
-    'Inbox'    => 'Inbox',
-    'Messages' => 'Μηνύματα',
-    'Outbox'   => 'Εξερχομένων',
-    'Settings' => 'Ρυθμίσεις',
-    'Spam'     => 'Ανεπιθυμητη αλληλογραφια',
-    'Trash'    => 'Σκουπίδια',
+    'Draft'     => 'Προσχέδιο',
+    'Inbox'     => 'Inbox',
+    'Messages'  => 'Μηνύματα',
+    'Outbox'    => 'Εξερχομένων',
+    'Settings'  => 'Ρυθμίσεις',
+    'Spam'      => 'Ανεπιθυμητη αλληλογραφια',
+    'Templates' => '',
+    'Trash'     => 'Σκουπίδια',
 ]];

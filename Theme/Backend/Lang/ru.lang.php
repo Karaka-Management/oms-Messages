@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Статус',
     'Subject'       => 'Предмет',
     'Tag'           => 'Тег',
+    'Templates'     => '',
     'To'            => 'К',
     'Today'         => 'Сегодня',
     'Trash'         => 'Мусор',

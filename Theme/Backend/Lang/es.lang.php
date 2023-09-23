@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Estado',
     'Subject'       => 'Sujeto',
     'Tag'           => 'Etiqueta',
+    'Templates'     => '',
     'To'            => 'A',
     'Today'         => 'Hoy dia',
     'Trash'         => 'Basura',

@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Tervezet',
-    'Inbox'    => 'Postafiók',
-    'Messages' => 'üzenetek',
-    'Outbox'   => 'Outbox',
-    'Settings' => 'Beállítások',
-    'Spam'     => 'Spam',
-    'Trash'    => 'Szemét',
+    'Draft'     => 'Tervezet',
+    'Inbox'     => 'Postafiók',
+    'Messages'  => 'üzenetek',
+    'Outbox'    => 'Outbox',
+    'Settings'  => 'Beállítások',
+    'Spam'      => 'Spam',
+    'Templates' => '',
+    'Trash'     => 'Szemét',
 ]];

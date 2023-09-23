@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Állapot',
     'Subject'       => 'Tantárgy',
     'Tag'           => 'Címke',
+    'Templates'     => '',
     'To'            => 'Nak nek',
     'Today'         => 'Ma',
     'Trash'         => 'Szemét',

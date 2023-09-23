@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => '状態',
     'Subject'       => '主題',
     'Tag'           => '鬼ごっこ',
+    'Templates'     => '',
     'To'            => 'に',
     'Today'         => '今日',
     'Trash'         => 'ごみ',

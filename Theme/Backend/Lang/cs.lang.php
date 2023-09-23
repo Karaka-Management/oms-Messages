@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Postavení',
     'Subject'       => 'Předmět',
     'Tag'           => 'Štítek',
+    'Templates'     => '',
     'To'            => 'Na',
     'Today'         => 'Dnes',
     'Trash'         => 'Odpadky',

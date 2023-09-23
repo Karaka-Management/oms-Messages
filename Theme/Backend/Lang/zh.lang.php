@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => '地位',
     'Subject'       => '主题',
     'Tag'           => '标签',
+    'Templates'     => '',
     'To'            => '到',
     'Today'         => '今天',
     'Trash'         => '垃圾',

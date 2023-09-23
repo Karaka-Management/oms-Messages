@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => '상태',
     'Subject'       => '주제',
     'Tag'           => '꼬리표',
+    'Templates'     => '',
     'To'            => '에게',
     'Today'         => '오늘',
     'Trash'         => '쓰레기',

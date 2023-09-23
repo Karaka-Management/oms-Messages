@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Чернець',
-    'Inbox'    => 'Папця',
-    'Messages' => 'Повідомлень',
-    'Outbox'   => 'Вихідний',
-    'Settings' => 'Налаштування',
-    'Spam'     => 'Спам',
-    'Trash'    => 'Кошик',
+    'Draft'     => 'Чернець',
+    'Inbox'     => 'Папця',
+    'Messages'  => 'Повідомлень',
+    'Outbox'    => 'Вихідний',
+    'Settings'  => 'Налаштування',
+    'Spam'      => 'Спам',
+    'Templates' => '',
+    'Trash'     => 'Кошик',
 ]];

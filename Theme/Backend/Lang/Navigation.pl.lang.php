@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Projekt',
-    'Inbox'    => 'W pudełku',
-    'Messages' => 'Wiadomości',
-    'Outbox'   => 'Skrzynka nadawcza',
-    'Settings' => 'Ustawienia',
-    'Spam'     => 'spam',
-    'Trash'    => 'Śmieci',
+    'Draft'     => 'Projekt',
+    'Inbox'     => 'W pudełku',
+    'Messages'  => 'Wiadomości',
+    'Outbox'    => 'Skrzynka nadawcza',
+    'Settings'  => 'Ustawienia',
+    'Spam'      => 'spam',
+    'Templates' => '',
+    'Trash'     => 'Śmieci',
 ]];

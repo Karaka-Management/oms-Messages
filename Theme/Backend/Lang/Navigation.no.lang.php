@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => 'Utkast til',
-    'Inbox'    => 'Innboks',
-    'Messages' => 'Meldinger',
-    'Outbox'   => 'Utboks',
-    'Settings' => 'Innstillinger',
-    'Spam'     => 'Spam',
-    'Trash'    => 'Søppel',
+    'Draft'     => 'Utkast til',
+    'Inbox'     => 'Innboks',
+    'Messages'  => 'Meldinger',
+    'Outbox'    => 'Utboks',
+    'Settings'  => 'Innstillinger',
+    'Spam'      => 'Spam',
+    'Templates' => '',
+    'Trash'     => 'Søppel',
 ]];

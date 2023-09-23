@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'حالة',
     'Subject'       => 'موضوع',
     'Tag'           => 'بطاقة شعار',
+    'Templates'     => '',
     'To'            => 'ل',
     'Today'         => 'اليوم',
     'Trash'         => 'نفاية',

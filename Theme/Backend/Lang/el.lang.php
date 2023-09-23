@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Κατάσταση',
     'Subject'       => 'Θέμα',
     'Tag'           => 'Ετικέτα',
+    'Templates'     => '',
     'To'            => 'Προς το',
     'Today'         => 'Σήμερα',
     'Trash'         => 'Σκουπίδια',

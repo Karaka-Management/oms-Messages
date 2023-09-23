@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Durum',
     'Subject'       => 'Ders',
     'Tag'           => 'Etiket',
+    'Templates'     => '',
     'To'            => 'İle',
     'Today'         => 'Bugün',
     'Trash'         => 'Çöp',

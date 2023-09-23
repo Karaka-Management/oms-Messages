@@ -40,6 +40,7 @@ return ['Messages' => [
     'Status'        => 'Tila',
     'Subject'       => 'Aihe',
     'Tag'           => 'Tag',
+    'Templates'     => '',
     'To'            => 'Jllek',
     'Today'         => 'Tänään',
     'Trash'         => 'Roska',

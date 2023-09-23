@@ -13,11 +13,12 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Draft'    => '下書き',
-    'Inbox'    => '受話器',
-    'Messages' => 'メッセージ',
-    'Outbox'   => 'boxbox',
-    'Settings' => '設定',
-    'Spam'     => 'スパム',
-    'Trash'    => 'ごみ',
+    'Draft'     => '下書き',
+    'Inbox'     => '受話器',
+    'Messages'  => 'メッセージ',
+    'Outbox'    => 'boxbox',
+    'Settings'  => '設定',
+    'Spam'      => 'スパム',
+    'Templates' => '',
+    'Trash'     => 'ごみ',
 ]];
