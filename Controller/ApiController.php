@@ -72,8 +72,7 @@ final class ApiController extends Controller
     private function validateEmailCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (false
-        ) {
+        if (($val['subject'] = !$request->hasData('subject'))) {
             return $val;
         }
 
