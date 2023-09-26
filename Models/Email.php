@@ -42,7 +42,7 @@ class Email extends MailEmail implements \JsonSerializable
 
     public int $status = 0;
 
-    private array $media = [];
+    public array $media = [];
 
     public array $l11n = [];
 
