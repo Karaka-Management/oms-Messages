@@ -38,7 +38,7 @@ final class ApiController extends Controller
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
-     * @param mixed            $data     Generic data
+     * @param array            $data     Generic data
      *
      * @return void
      *
@@ -46,7 +46,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmailCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
+    public function apiEmailCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
     {
         if (!empty($val = $this->validateEmailCreate($request))) {
             $response->header->status = RequestStatusCode::R_400;
@@ -146,7 +146,7 @@ final class ApiController extends Controller
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
-     * @param mixed            $data     Generic data
+     * @param array            $data     Generic data
      *
      * @return void
      *
@@ -154,7 +154,7 @@ final class ApiController extends Controller
      *
      * @since 1.0.0
      */
-    public function apiEmailL11nCreate(RequestAbstract $request, ResponseAbstract $response, mixed $data = null) : void
+    public function apiEmailL11nCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
     {
         if (!empty($val = $this->validateEmailL11nCreate($request))) {
             $response->header->status = RequestStatusCode::R_400;
