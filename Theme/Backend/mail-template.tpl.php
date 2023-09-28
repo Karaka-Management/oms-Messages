@@ -29,7 +29,7 @@ echo $this->data['nav']->render(); ?>
     </div>
     <div class="tab-content">
         <?php foreach ($mail->l11n as $idx => $l11n) : ?>
-        <input type="radio" id="c-tab-<?= $idx; ?>" name="tabular-1" checked>
+        <input type="radio" id="c-tab-<?= $idx; ?>" name="tabular-1"<?= $l11n === $this->response->header->l11n->language ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">

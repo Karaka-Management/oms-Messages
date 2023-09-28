@@ -48,35 +48,9 @@ final class ApiController extends Controller
      */
     public function apiEmailCreate(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
     {
-        if (!empty($val = $this->validateEmailCreate($request))) {
-            $response->header->status = RequestStatusCode::R_400;
-            $this->createInvalidCreateResponse($request, $response, $val);
-
-            return;
-        }
-
         $email = $this->createEmailFromRequest($request);
         $this->createModel($request->header->account, $email, EmailMapper::class, 'email', $request->getOrigin());
         $this->createStandardCreateResponse($request, $response, $email);
-    }
-
-    /**
-     * Validate email create request
-     *
-     * @param RequestAbstract $request Request
-     *
-     * @return array<string, bool>
-     *
-     * @since 1.0.0
-     */
-    private function validateEmailCreate(RequestAbstract $request) : array
-    {
-        $val = [];
-        if (($val['subject'] = !$request->hasData('subject'))) {
-            return $val;
-        }
-
-        return [];
     }
 
     /**
