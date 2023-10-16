@@ -37,7 +37,7 @@ final class NullEmailL11nTest extends \PHPUnit\Framework\TestCase
     public function testId() : void
     {
         $null = new NullEmailL11n(2);
-        self::assertEquals(2, $null->getId());
+        self::assertEquals(2, $null->id);
     }
 
     /**
