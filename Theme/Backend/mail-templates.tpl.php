@@ -24,7 +24,7 @@ echo $this->data['nav']->render(); ?>
 <div class="row">
     <div class="col-xs-12 col-md-9">
         <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Templates'); ?><i class="lni lni-download download btn end-xs"></i></div>
+            <div class="portlet-head"><?= $this->getHtml('Templates'); ?><i class="g-icon download btn end-xs">download</i></div>
             <table id="profileList" class="default">
                 <thead>
                 <tr>
@@ -54,7 +54,7 @@ echo $this->data['nav']->render(); ?>
 
     <div class="col-xs-12 col-md-3">
         <div class="box">
-            <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/template/create'); ?>"><i class="fa fa-pencil"></i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+            <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/template/create'); ?>"><i class="g-icon">edit</i> <?= $this->getHtml('Create', '0', '0'); ?></a>
         </div>
 
         <div class="portlet">

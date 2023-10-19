@@ -7,7 +7,7 @@
         "name": "Messages",
         "uri": "{/base}/messages/dashboard?{?}",
         "target": "self",
-        "icon": "fa fa-envelope",
+        "icon": "mail",
         "order": 10,
         "from": "Messages",
         "permission": { "permission": 2, "category": null, "element": null },

@@ -18,9 +18,9 @@ echo $this->data['nav']->render(); ?>
     <div class="inner">
         <form>
             <table class="layout wf-100">
-                <tr><td style="width: 1%"><button class="simple"><i class="fa fa-book"></i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('To'); ?>" name="to">
-                <tr><td style="width: 1%"><button class="simple"><i class="fa fa-book"></i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('CC'); ?>" name="cc">
-                <tr><td style="width: 1%"><button class="simple"><i class="fa fa-book"></i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('BCC'); ?>" name="bcc">
+                <tr><td style="width: 1%"><button class="simple"><i class="g-icon">book</i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('To'); ?>" name="to">
+                <tr><td style="width: 1%"><button class="simple"><i class="g-icon">book</i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('CC'); ?>" name="cc">
+                <tr><td style="width: 1%"><button class="simple"><i class="g-icon">book</i></button><td><input type="text" placeholder="&#xf007; <?= $this->getHtml('BCC'); ?>" name="bcc">
                 <tr><td><td><input type="text" placeholder="&#xf040; <?= $this->getHtml('Subject'); ?>" name="subject">
                 <tr><td><td><input type="file" name="files" multiple>
                 <tr><td><td><div class="textarea" contenteditable="true" style="height: 400px;"></div><textarea placeholder="&#xf040;" style="display: none" name="mail"></textarea>
