@@ -33,7 +33,7 @@ echo $this->data['nav']->render(); ?>
     <div class="col-xs-12 col-md-9">
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Messages'); ?><i class="g-icon download btn end-xs">download</i></div>
-            <table id="profileList" class="default">
+            <table id="profileList" class="default sticky">
             <thead>
             <tr>
                 <td><span class="check"><input type="checkbox" name="profile-list"></span>
@@ -66,7 +66,7 @@ echo $this->data['nav']->render(); ?>
 
     <div class="col-xs-12 col-md-3">
         <div class="box">
-            <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/mail/create'); ?>"><i class="g-icon">edit</i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+            <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/mail/create'); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
         </div>
 
         <div class="portlet">

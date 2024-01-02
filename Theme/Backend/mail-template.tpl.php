@@ -23,13 +23,13 @@ echo $this->data['nav']->render(); ?>
     <div class="box">
         <ul class="tab-links">
             <?php foreach ($mail->l11n as $idx => $l11n) : ?>
-            <li<?= $idx === 1 ? ' class="active"' : ''; ?>><label for="c-tab-<?= $idx; ?>"><?= $this->printHtml(ISO639Enum::getBy2Code($l11n->language)); ?></label></li>
+            <li<?= $idx === 1 ? ' class="active"' : ''; ?>><label for="c-tab-<?= $idx; ?>"><?= $this->printHtml(ISO639Enum::getBy2Code($l11n->language)); ?></label>
             <?php endforeach; ?>
         </ul>
     </div>
     <div class="tab-content">
         <?php foreach ($mail->l11n as $idx => $l11n) : ?>
-        <input type="radio" id="c-tab-<?= $idx; ?>" name="tabular-1"<?= $l11n === $this->response->header->l11n->language ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-<?= $idx; ?>" name="tabular-1"<?= $l11n->language === $this->response->header->l11n->language ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">

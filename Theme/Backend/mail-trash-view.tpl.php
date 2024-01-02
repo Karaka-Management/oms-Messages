@@ -21,13 +21,13 @@ echo $this->data['nav']->render(); ?>
 
 <section class="box w-100">
     <ul class="btns floatLeft">
-        <li><a href="<?= \phpOMS\Uri\UriFactory::build('messages/mail/create'); ?>"><i class="g-icon">edit</i> <?= $this->getHtml('Create', '0', '0'); ?></a>
+        <li><a href="<?= \phpOMS\Uri\UriFactory::build('messages/mail/create'); ?>"><i class="g-icon">stylus</i> <?= $this->getHtml('Create', '0', '0'); ?></a>
         <li><a href=""><i class="g-icon">delete</i> <?= $this->getHtml('Delete'); ?></a>
     </ul>
 </section>
 
 <div class="box w-100">
-    <table class="default">
+    <table class="default sticky">
         <caption><?= $this->getHtml('Messages'); ?><i class="g-icon end-xs download btn">download</i></caption>
         <thead>
         <tr>
