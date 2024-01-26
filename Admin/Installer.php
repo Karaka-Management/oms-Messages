@@ -19,7 +19,6 @@ use phpOMS\Message\Http\HttpRequest;
 use phpOMS\Message\Http\HttpResponse;
 use phpOMS\Module\InstallerAbstract;
 use phpOMS\System\File\PathException;
-use phpOMS\Uri\HttpUri;
 
 /**
  * Installer class.
@@ -121,7 +120,7 @@ final class Installer extends InstallerAbstract
         $module = $app->moduleManager->get('Messages');
 
         $response = new HttpResponse();
-        $request  = new HttpRequest(new HttpUri(''));
+        $request  = new HttpRequest();
 
         $request->header->account = 1;
         $request->setData('from', $data['from'] ?? '');
@@ -146,7 +145,7 @@ final class Installer extends InstallerAbstract
 
         foreach ($data['l11n'] as $language => $l11n) {
             $l11nResponse = new HttpResponse();
-            $l11nRequest  = new HttpRequest(new HttpUri(''));
+            $l11nRequest  = new HttpRequest();
 
             $l11nRequest->header->account = 1;
             $l11nRequest->setData('email', $emailId);

@@ -19,6 +19,7 @@ use Modules\Messages\Models\Email;
 use Modules\Messages\Models\EmailL11n;
 use Modules\Messages\Models\EmailL11nMapper;
 use Modules\Messages\Models\EmailMapper;
+use phpOMS\Localization\ISO639x1Enum;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
@@ -153,14 +154,12 @@ final class ApiController extends Controller
      */
     private function createEmailL11nFromRequest(RequestAbstract $request) : EmailL11n
     {
-        $itemL11n        = new EmailL11n();
-        $itemL11n->email = $request->getDataInt('email') ?? 0;
-        $itemL11n->setLanguage(
-            $request->getDataString('language') ?? $request->header->l11n->language
-        );
-        $itemL11n->subject = $request->getDataString('subject') ?? '';
-        $itemL11n->body    = $request->getDataString('body') ?? '';
-        $itemL11n->bodyAlt = $request->getDataString('bodyalt') ?? '';
+        $itemL11n           = new EmailL11n();
+        $itemL11n->email    = $request->getDataInt('email') ?? 0;
+        $itemL11n->language = ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? $request->header->l11n->language;
+        $itemL11n->subject  = $request->getDataString('subject') ?? '';
+        $itemL11n->body     = $request->getDataString('body') ?? '';
+        $itemL11n->bodyAlt  = $request->getDataString('bodyalt') ?? '';
 
         return $itemL11n;
     }

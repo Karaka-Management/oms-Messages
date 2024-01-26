@@ -44,7 +44,7 @@ echo $this->data['nav']->render(); ?>
             <tbody>
             <?php $count = 0;
                 foreach ($messages as $key => $value) : ++$count;
-                $url = UriFactory::build('{/base}/messages/mail/single?{?}&id=' . $value->uid); ?>
+                $url = UriFactory::build('{/base}/messages/mail/view?{?}&id=' . $value->uid); ?>
                 <tr>
                     <td><span class="check"><input type="checkbox" name=""></span>
                     <td><a href="<?= $url; ?>"<?= $this->printHtml($value->seen == 0 ? ' class="unseen"' : ''); ?>></a>

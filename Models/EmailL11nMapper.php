@@ -36,12 +36,12 @@ final class EmailL11nMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'messages_mail_l11n_id'             => ['name' => 'messages_mail_l11n_id',          'type' => 'int',    'internal' => 'id'],
-        'messages_mail_l11n_subject'        => ['name' => 'messages_mail_l11n_subject', 'type' => 'string', 'internal' => 'subject'],
-        'messages_mail_l11n_body'           => ['name' => 'messages_mail_l11n_body',        'type' => 'string',    'internal' => 'body'],
-        'messages_mail_l11n_bodyalt'        => ['name' => 'messages_mail_l11n_bodyalt',        'type' => 'string', 'internal' => 'bodyAlt'],
-        'messages_mail_l11n_message'        => ['name' => 'messages_mail_l11n_message',     'type' => 'int',    'internal' => 'email'],
-        'messages_mail_l11n_lang'           => ['name' => 'messages_mail_l11n_lang',     'type' => 'string',    'internal' => 'language'],
+        'messages_mail_l11n_id'      => ['name' => 'messages_mail_l11n_id',          'type' => 'int',    'internal' => 'id'],
+        'messages_mail_l11n_subject' => ['name' => 'messages_mail_l11n_subject', 'type' => 'string', 'internal' => 'subject'],
+        'messages_mail_l11n_body'    => ['name' => 'messages_mail_l11n_body',        'type' => 'string',    'internal' => 'body'],
+        'messages_mail_l11n_bodyalt' => ['name' => 'messages_mail_l11n_bodyalt',        'type' => 'string', 'internal' => 'bodyAlt'],
+        'messages_mail_l11n_message' => ['name' => 'messages_mail_l11n_message',     'type' => 'int',    'internal' => 'email'],
+        'messages_mail_l11n_lang'    => ['name' => 'messages_mail_l11n_lang',     'type' => 'string',    'internal' => 'language'],
     ];
 
     /**

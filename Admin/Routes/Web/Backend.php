@@ -18,7 +18,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/messages/dashboard.*$' => [
+    '^.*/messages/dashboard(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageInbox',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/outbox.*$' => [
+    '^.*/messages/outbox(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageOutbox',
             'verb'       => RouteVerb::GET,
@@ -40,7 +40,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/trash.*$' => [
+    '^.*/messages/trash(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTrash',
             'verb'       => RouteVerb::GET,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/spam.*$' => [
+    '^.*/messages/spam(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageSpam',
             'verb'       => RouteVerb::GET,
@@ -62,7 +62,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/settings.*$' => [
+    '^.*/messages/settings(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageSettings',
             'verb'       => RouteVerb::GET,
@@ -73,7 +73,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/template/list.*$' => [
+    '^.*/messages/template/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTemplates',
             'verb'       => RouteVerb::GET,
@@ -84,7 +84,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/template/single.*$' => [
+    '^.*/messages/template/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageTemplate',
             'verb'       => RouteVerb::GET,
@@ -95,7 +95,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/mail/create.*$' => [
+    '^.*/messages/mail/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageCreate',
             'verb'       => RouteVerb::GET,
@@ -106,7 +106,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/mail/single.*$' => [
+    '^.*/messages/mail/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageView',
             'verb'       => RouteVerb::GET,
@@ -117,7 +117,7 @@ return [
             ],
         ],
     ],
-    '^.*/messages/mail/single.*$' => [
+    '^.*/messages/mail/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Messages\Controller\BackendController:viewMessageView',
             'verb'       => RouteVerb::GET,

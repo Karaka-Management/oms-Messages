@@ -106,8 +106,8 @@ class EmailL11n implements \JsonSerializable
     public function toArray() : array
     {
         return [
-            'id'             => $this->id,
-            'language'       => $this->language,
+            'id'       => $this->id,
+            'language' => $this->language,
         ];
     }
 

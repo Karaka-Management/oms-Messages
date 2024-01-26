@@ -42,8 +42,6 @@ class Email extends MailEmail implements \JsonSerializable
 
     public int $status = 0;
 
-    public array $media = [];
-
     public array $l11n = [];
 
     public bool $isTemplate = false;
@@ -85,7 +83,7 @@ class Email extends MailEmail implements \JsonSerializable
     public function toArray() : array
     {
         return [
-           'id'      => $this->id,
+           'id' => $this->id,
         ];
     }
 
@@ -96,4 +94,6 @@ class Email extends MailEmail implements \JsonSerializable
     {
         return $this->toArray();
     }
+
+    use \Modules\Media\Models\MediaListTrait;
 }
