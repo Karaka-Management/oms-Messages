@@ -20,7 +20,7 @@ $quota = $mail->getQuota();
 echo $this->data['nav']->render(); ?>
 
 <section class="box w-100">
-    <ul class="btns floatLeft">
+    <ul class="btns lf">
         <li><a href="<?= \phpOMS\Uri\UriFactory::build('messages/mail/create'); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
         <li><a href=""><i class="g-icon">delete</i> <?= $this->getHtml('Delete'); ?></a>
     </ul>

@@ -31,6 +31,11 @@ use phpOMS\Message\ResponseAbstract;
  * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
+ *
+ * @todo Implement general email header & footer which can be used by all templates
+ *      Load normal template
+ *      Replace {header_template}
+ *      Replace {footer_template}
  */
 final class ApiController extends Controller
 {

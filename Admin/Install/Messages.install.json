@@ -1,0 +1,44 @@
+[
+    {
+        "type": "email_template",
+        "from": "",
+        "to": "",
+        "cc": "",
+        "bcc": "",
+        "ishtml": true,
+        "l11n": {
+            "en": {
+                "subject": "Header",
+                "body": "",
+                "bodyalt": ""
+            },
+            "de": {
+                "subject": "Kopfzeile",
+                "body": "",
+                "bodyalt": ""
+            }
+        },
+        "send": false
+    },
+    {
+        "type": "email_template",
+        "from": "",
+        "to": "",
+        "cc": "",
+        "bcc": "",
+        "ishtml": true,
+        "l11n": {
+            "en": {
+                "subject": "Footer",
+                "body": "<p style=\"margin-top: 40px;\">Jingga e.K. - www.jingga.app - CEO Dennis Eichhorn - Amtsgericht Friedberg HRA 5058</p>",
+                "bodyalt": "\n\n\nJingga e.K. - www.jingga.app - CEO Dennis Eichhorn - Amtsgericht Friedberg HRA 5058"
+            },
+            "de": {
+                "subject": "Fußzeile",
+                "body": "<p style=\"margin-top: 40px;\">Jingga e.K. - www.jingga.app - CEO Dennis Eichhorn - Amtsgericht Friedberg HRA 5058</p>",
+                "bodyalt": "\n\n\nJingga e.K. - www.jingga.app - CEO Dennis Eichhorn - Amtsgericht Friedberg HRA 5058"
+            }
+        },
+        "send": false
+    }
+]
