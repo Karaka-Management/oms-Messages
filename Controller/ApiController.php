@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Modules\Messages\Controller;
 
 use Modules\Admin\Models\NullAccount;
+use Modules\Media\Models\MediaMapper;
 use Modules\Messages\Models\Email;
 use Modules\Messages\Models\EmailL11n;
 use Modules\Messages\Models\EmailL11nMapper;
@@ -57,6 +58,63 @@ final class ApiController extends Controller
         $email = $this->createEmailFromRequest($request);
         $this->createModel($request->header->account, $email, EmailMapper::class, 'email', $request->getOrigin());
         $this->createStandardCreateResponse($request, $response, $email);
+    }
+
+    /**
+     * Api method to create tag
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return void
+     *
+     * @api
+     *
+     * @since 1.0.0
+     */
+    public function apiMediaEmailSend(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
+    {
+        $email = $request->getDataString('email');
+
+        $media = $data['media'] ?? MediaMapper::get()
+            ->where('id', (int) $request->getData('id'))
+            ->execute();
+
+        /** @var \Model\Setting $template */
+        $template = $this->app->appSettings->get(
+            names: (string) $request->getDataString('template')
+        );
+
+        $handler = $this->app->moduleManager->get('Admin', 'Api')->setUpServerMailHandler();
+
+        $mail = EmailMapper::get()
+            ->with('l11n')
+            ->where('id', $template)
+            ->where('l11n/language', $response->header->l11n->language)
+            ->execute();
+
+        $status = false;
+        if ($mail->id !== 0) {
+            $status = $this->app->moduleManager->get('Admin', 'Api')->setupEmailDefaults($mail, $response->header->l11n->language);
+        }
+
+        $mail->addTo($email);
+        $mail->addAttachment($media->getAbsolutePath(), $media->name);
+
+        if ($status) {
+            $status = $handler->send($mail);
+        }
+
+        if (!$status) {
+            \phpOMS\Log\FileLogger::getInstance()->error(
+                \phpOMS\Log\FileLogger::MSG_FULL, [
+                    'message' => 'Couldn\'t send bill media: ' . $media->id,
+                    'line'    => __LINE__,
+                    'file'    => self::class,
+                ]
+            );
+        }
     }
 
     /**
