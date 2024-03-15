@@ -76,6 +76,9 @@ final class ApiController extends Controller
     public function apiMediaEmailSend(RequestAbstract $request, ResponseAbstract $response, array $data = []) : void
     {
         $email = $request->getDataString('email');
+        if (empty($email)) {
+            return;
+        }
 
         $media = $data['media'] ?? MediaMapper::get()
             ->where('id', (int) $request->getData('id'))
