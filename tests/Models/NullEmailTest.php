@@ -19,31 +19,23 @@ use Modules\Messages\Models\NullEmail;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Messages\Models\NullEmail::class)]
 final class NullEmailTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Messages\Models\NullEmail
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\Messages\Models\Email', new NullEmail());
     }
 
-    /**
-     * @covers \Modules\Messages\Models\NullEmail
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullEmail(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\Messages\Models\NullEmail
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullEmail(2);

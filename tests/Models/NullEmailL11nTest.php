@@ -19,31 +19,23 @@ use Modules\Messages\Models\NullEmailL11n;
 /**
  * @internal
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(\Modules\Messages\Models\NullEmailL11n::class)]
 final class NullEmailL11nTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @covers \Modules\Messages\Models\NullEmailL11n
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testNull() : void
     {
         self::assertInstanceOf('\Modules\Messages\Models\EmailL11n', new NullEmailL11n());
     }
 
-    /**
-     * @covers \Modules\Messages\Models\NullEmailL11n
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testId() : void
     {
         $null = new NullEmailL11n(2);
         self::assertEquals(2, $null->id);
     }
 
-    /**
-     * @covers \Modules\Messages\Models\NullEmailL11n
-     * @group module
-     */
+    #[\PHPUnit\Framework\Attributes\Group('module')]
     public function testJsonSerialize() : void
     {
         $null = new NullEmailL11n(2);
