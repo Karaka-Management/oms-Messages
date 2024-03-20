@@ -22,7 +22,7 @@ use Modules\Messages\Models\NullEmail;
 final class NullEmailTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers Modules\Messages\Models\NullEmail
+     * @covers \Modules\Messages\Models\NullEmail
      * @group module
      */
     public function testNull() : void
@@ -31,7 +31,7 @@ final class NullEmailTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Messages\Models\NullEmail
+     * @covers \Modules\Messages\Models\NullEmail
      * @group module
      */
     public function testId() : void
@@ -41,7 +41,7 @@ final class NullEmailTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Modules\Messages\Models\NullEmail
+     * @covers \Modules\Messages\Models\NullEmail
      * @group module
      */
     public function testJsonSerialize() : void
