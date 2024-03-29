@@ -18,7 +18,7 @@
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
-                "name": "Inbox",
+                "name": "Dashboard",
                 "uri": "{/base}/messages/dashboard?{?}",
                 "target": "self",
                 "icon": null,
@@ -33,6 +33,22 @@
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
+                "name": "Inbox",
+                "uri": "{/base}/messages/inbox?{?}",
+                "target": "self",
+                "icon": null,
+                "order": 4,
+                "from": "Messages",
+                "permission": { "permission": 2, "category": null, "element": null },
+                "parent": 1001201001,
+                "children": [],
+                "status": 3
+            },
+            {
+                "id": 1001204001,
+                "pid": "/",
+                "type": 3,
+                "subtype": 1,
                 "name": "Outbox",
                 "uri": "{/base}/messages/outbox?{?}",
                 "target": "self",
@@ -41,10 +57,11 @@
                 "from": "Messages",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1001201001,
-                "children": []
+                "children": [],
+                "status": 3
             },
             {
-                "id": 1001204001,
+                "id": 1001205001,
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
@@ -56,10 +73,11 @@
                 "from": "Messages",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1001201001,
-                "children": []
+                "children": [],
+                "status": 3
             },
             {
-                "id": 1001205001,
+                "id": 1001206001,
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
@@ -71,10 +89,11 @@
                 "from": "Messages",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1001201001,
-                "children": []
+                "children": [],
+                "status": 3
             },
             {
-                "id": 1001206001,
+                "id": 1001207001,
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
@@ -86,10 +105,11 @@
                 "from": "Messages",
                 "permission": { "permission": 2, "category": null, "element": null },
                 "parent": 1001201001,
-                "children": []
+                "children": [],
+                "status": 3
             },
             {
-                "id": 1001207001,
+                "id": 1001208001,
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,
@@ -104,7 +124,7 @@
                 "children": []
             },
             {
-                "id": 1001208001,
+                "id": 1001209001,
                 "pid": "/",
                 "type": 3,
                 "subtype": 1,

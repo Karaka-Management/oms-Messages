@@ -22,7 +22,7 @@ $next     = empty($messages) ? 'messages/dashboard' : 'messages/dashboard?{?}&id
 echo $this->data['nav']->render(); ?>
 
 <div class="row">
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12">
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Templates'); ?><i class="g-icon download btn end-xs">download</i></div>
             <table id="profileList" class="default sticky">
@@ -49,33 +49,6 @@ echo $this->data['nav']->render(); ?>
         <div class="box">
             <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
             <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-md-3">
-        <div class="box">
-            <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/template/create'); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
-        </div>
-
-        <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Channels'); ?></div>
-            <div class="portlet-body">
-                asdf
-            </div>
-        </div>
-
-        <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Email'); ?></div>
-            <div class="portlet-body">
-                asdf
-            </div>
-        </div>
-
-        <div class="portlet">
-            <div class="portlet-head"><?= $this->getHtml('Chat'); ?></div>
-            <div class="portlet-body">
-                asdf
-            </div>
         </div>
     </div>
 </div>

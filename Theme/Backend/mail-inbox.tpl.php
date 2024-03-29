@@ -72,12 +72,21 @@ echo $this->data['nav']->render(); ?>
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Channels'); ?></div>
             <div class="portlet-body">
+                asdf
+            </div>
+        </div>
+
+        <div class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Email'); ?></div>
+            <div class="portlet-body">
+                asdf
             </div>
         </div>
 
         <div class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Chat'); ?></div>
             <div class="portlet-body">
+                asdf
             </div>
         </div>
     </div>
