@@ -75,7 +75,7 @@ final class BackendController extends Controller
             ->where('isTemplate', true)
             ->where('account', $request->header->account)
             ->where('l11n/language', $response->header->l11n->language)
-            ->execute();
+            ->executeGetArray();
 
         $view->data['templates'] = $templates;
 
