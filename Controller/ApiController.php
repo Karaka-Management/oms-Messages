@@ -41,7 +41,7 @@ use phpOMS\Message\ResponseAbstract;
 final class ApiController extends Controller
 {
     /**
-     * Api method to create tag
+     * Api method to create email
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -61,7 +61,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Api method to create tag
+     * Api method to send media email
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response

@@ -19,7 +19,7 @@ use Modules\Media\Models\MediaMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
- * Mapper class.
+ * Email mapper class.
  *
  * @package Modules\Messages\Models
  * @license OMS License 2.0

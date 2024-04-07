@@ -17,7 +17,7 @@ namespace Modules\Messages\Models;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
- * Mapper class.
+ * Channel mapper class.
  *
  * @package Modules\Messages\Models
  * @license OMS License 2.0
