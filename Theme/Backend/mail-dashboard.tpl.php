@@ -31,7 +31,7 @@ echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12 col-md-9">
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Messages'); ?><i class="g-icon download btn end-xs">download</i></div>
             <table id="profileList" class="default sticky">
             <thead>
@@ -56,12 +56,12 @@ echo $this->data['nav']->render(); ?>
             <tr>
                 <td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
             <?php endif; ?>
-        </table>
-        <div class="portlet-foot">
-                <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
-                <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
+            </table>
+            <div class="portlet-foot">
+                    <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
+                    <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>
             </div>
-        </div>
+        </section>
     </div>
 
     <div class="col-xs-12 col-md-3">
@@ -69,16 +69,16 @@ echo $this->data['nav']->render(); ?>
             <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/mail/create'); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
         </div>
 
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Channels'); ?></div>
             <div class="portlet-body">
             </div>
-        </div>
+        </section>
 
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Chat'); ?></div>
             <div class="portlet-body">
             </div>
-        </div>
+        </section>
     </div>
 </div>

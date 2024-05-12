@@ -23,7 +23,7 @@ echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="portlet">
+        <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Templates'); ?><i class="g-icon download btn end-xs">download</i></div>
             <table id="profileList" class="default sticky">
                 <thead>
@@ -45,7 +45,7 @@ echo $this->data['nav']->render(); ?>
                     <td colspan="5" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                 <?php endif; ?>
             </table>
-        </div>
+        </section>
         <div class="box">
             <a tabindex="0" class="button" href="<?= UriFactory::build($previous); ?>"><?= $this->getHtml('Previous', '0', '0'); ?></a>
             <a tabindex="0" class="button" href="<?= UriFactory::build($next); ?>"><?= $this->getHtml('Next', '0', '0'); ?></a>

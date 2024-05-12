@@ -22,8 +22,12 @@ echo $this->data['nav']->render(); ?>
 <div class="tabview tab-2 right">
     <div class="box">
         <ul class="tab-links">
-            <?php foreach ($mail->l11n as $idx => $l11n) : ?>
-            <li<?= $idx === 1 ? ' class="active"' : ''; ?>><label for="c-tab-<?= $idx; ?>"><?= $this->printHtml(ISO639Enum::getBy2Code($l11n->language)); ?></label>
+            <?php
+            $c = 0;
+            foreach ($mail->l11n as $idx => $l11n) :
+                ++$c;
+            ?>
+            <li<?= $c === 1 ? ' class="active"' : ''; ?>><label for="c-tab-<?= $idx; ?>"><?= $this->printHtml(ISO639Enum::getBy2Code($l11n->language)); ?></label>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -33,43 +37,43 @@ echo $this->data['nav']->render(); ?>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="portlet">
+                    <section class="portlet">
                         <div class="portlet-body">
                             <input type="text" value="<?= $this->printHtml($l11n->subject); ?>">
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="portlet">
+                    <section class="portlet">
                         <div class="portlet-body">
                             <pre><?= $this->printHtml(HtmlFormatter::format($l11n->body)); ?></pre>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <!--
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="portlet">
+                    <section class="portlet">
                         <div class="portlet-body">
                             <?= $l11n->body; ?>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
             -->
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="portlet">
+                    <section class="portlet">
                         <div class="portlet-body">
                             <pre><?= $l11n->bodyAlt; ?></pre>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
