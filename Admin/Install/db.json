@@ -194,7 +194,7 @@
         }
     },
     "messages_channel": {
-        "description": "Only for internal purposes, can be a server or group chat or 1v1 chat",
+        "comment": "Only for internal purposes, can be a server or group chat or 1v1 chat",
         "name": "messages_channel",
         "fields": {
             "messages_channel_id": {
