@@ -6,7 +6,7 @@
  *
  * @package   Modules\Messages\Admin
  * @copyright Dennis Eichhorn
- * @license   OMS License 2.0
+ * @license   OMS License 2.2
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -24,7 +24,7 @@ use phpOMS\System\File\PathException;
  * Installer class.
  *
  * @package Modules\Messages\Admin
- * @license OMS License 2.0
+ * @license OMS License 2.2
  * @link    https://jingga.app
  * @since   1.0.0
  */
