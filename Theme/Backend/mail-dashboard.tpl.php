@@ -68,7 +68,7 @@ echo $this->data['nav']->render(); ?>
         <div class="box">
             <a tabindex="0" class="button" href="<?= UriFactory::build('{/base}/messages/mail/create'); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
         </div>
-
+        <!--
         <section class="portlet">
             <div class="portlet-head"><?= $this->getHtml('Channels'); ?></div>
             <div class="portlet-body">
@@ -80,5 +80,6 @@ echo $this->data['nav']->render(); ?>
             <div class="portlet-body">
             </div>
         </section>
+        -->
     </div>
 </div>

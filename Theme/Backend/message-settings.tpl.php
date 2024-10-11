@@ -15,7 +15,7 @@ declare(strict_types=1);
 $boxes = [];
 
 echo $this->data['nav']->render(); ?>
-
+<!--
 <section class="box w-33">
     <header><h1><?= $this->getHtml('Mailboxes'); ?></h1></header>
     <div class="inner">
@@ -61,3 +61,4 @@ echo $this->data['nav']->render(); ?>
         </form>
     </div>
 </section>
+-->
