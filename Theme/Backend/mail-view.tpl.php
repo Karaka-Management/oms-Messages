@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 $mail = new \phpOMS\Message\Mail\Imap();
 $mail->connect('{imap.gmail.com:993/imap/ssl}INBOX', 'dev.orange.management@gmail.com', 'DEV_PASSWORD');
-$mails = $mail->getEmail($this->getData('id'));
+$mails = $mail->getEmail($this->data['id']);
 
 echo $this->data['nav']->render(); ?>
 

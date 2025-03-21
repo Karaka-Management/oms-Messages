@@ -1,11 +1,11 @@
 {
     "triggers": [
-        "PRE:Module:Messages:message-create",
-        "POST:Module:Messages:message-create",
-        "PRE:Module:Messages:message-update",
-        "POST:Module:Messages:message-update",
-        "PRE:Module:Messages:message-delete",
-        "POST:Module:Messages:message-delete"
+        "PRE:Messages:message-create",
+        "POST:Messages:message-create",
+        "PRE:Messages:message-update",
+        "POST:Messages:message-update",
+        "PRE:Messages:message-delete",
+        "POST:Messages:message-delete"
     ],
     "actions": {
         "1001200001": {

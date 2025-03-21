@@ -81,7 +81,7 @@ final class ApiController extends Controller
         }
 
         $media = $data['media'] ?? MediaMapper::get()
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->execute();
 
         /** @var \Model\Setting $template */
